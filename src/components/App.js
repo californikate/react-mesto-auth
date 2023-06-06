@@ -10,6 +10,9 @@ import PopupDeleteConfirm from './PopupDeleteConfirm';
 import ImagePopup from './ImagePopup';
 import { CurrenUserContext } from '../contexts/CurrentUserContext';
 import { useForm } from 'react-hook-form';
+import { Routes, Route, useNavigate, Navigate } from 'react-router-dom';
+import PageNotFound from './PageNotFound';
+import ProtectedRoute from './ProtectedRoute';
 
 function App() {
   const [isEditAvatarPopupOpen, setIsEditAvatarPopupOpen] = useState(false);
@@ -149,15 +152,24 @@ function App() {
       <div className="root">
         <div className="page">
           <Header />
-          <Main 
-            onEditAvatar={ handleEditAvatarClick }
-            onEditProfile={ handleEditProfileClick }
-            onAddPlace={ handleAddPlaceClick }
-            onCardClick={ handleCardClick }
-            onCardLike={ handleCardLike }
-            onCardDelete={ handleCardDelete }
-            cards={ cards }
-          />
+          <Routes>
+            <Route path='/' element={
+              <Route
+                element={ Main }
+                onEditAvatar={ handleEditAvatarClick }
+                onEditProfile={ handleEditProfileClick }
+                onAddPlace={ handleAddPlaceClick }
+                onCardClick={ handleCardClick }
+                onCardLike={ handleCardLike }
+                onCardDelete={ handleCardDelete }
+                cards={ cards }
+              />} 
+            />
+            <Route path='/sign-up' element={} />
+            <Route path='/sign-in' element={} />
+            <Route path='*' element={<PageNotFound />} />
+          </Routes>
+          
           <Footer />
           <EditProfilePopup 
             isOpen={ isEditProfilePopupOpen } 

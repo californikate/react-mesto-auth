@@ -52,3 +52,6 @@
 @import url(./blocks/popup/__figure/popup__figure.css);
 @import url(./blocks/popup/__image/popup__image.css);
 @import url(./blocks/popup/__caption/popup__caption.css);
+
+@import url(./blocks/page-not-found/page-not-found.css);
+@import url(./blocks/page-not-found/__title/page-not-found__title.css);
