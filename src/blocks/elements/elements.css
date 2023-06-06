@@ -1,0 +1,25 @@
+.elements {
+  width: 100%;
+  min-height: 45vh;
+  padding-top: 50px;
+  box-sizing: border-box;
+}
+
+@media screen and (max-width: 920px) {
+  .elements {
+    max-width: 581px;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 620px) {
+  .elements {
+    max-width: 282px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .elements {
+    padding-top: 36px;
+  }
+}
