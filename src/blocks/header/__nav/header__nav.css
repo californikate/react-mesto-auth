@@ -1,0 +1,6 @@
+.header__nav {
+  display: flex;
+  height: 22px;
+  margin-top: 5px;
+  gap: 24px;
+}
