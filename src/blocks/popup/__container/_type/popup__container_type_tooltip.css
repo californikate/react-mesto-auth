@@ -1,12 +1,10 @@
 .popup__container_type_tooltip {
-  max-width: 265px;
+  display: flex;
+  flex-direction: column;
+  width: 430px;
+  height: 330px;
   padding: 60px 83px;
-  text-align: center;
-}
 
-/* .popup_type_tooltip {
-    display: flex;
-    align-items: center;
-    width: 430px;
-    height: 330px;
-} */
+  text-align: center;
+  align-items: center;
+}

@@ -3,7 +3,7 @@
   text-decoration: none;
   
   text-align: center;
-  margin-top: 15px;
+  margin-top: 16px;
 
   font-weight: 400;
   font-size: 14px;
@@ -15,31 +15,3 @@
 .authorization__link:hover {
   opacity: .6;
 }
-
-/* .authorize__link {
-  margin-top: 15px;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 17px;
-  text-align: center;
-  color: #FFFFFF;
-  text-decoration: none;
-  transition: opacity .3s ease-in-out;
-}
-
-
-
-.authorization__link {
-    color: rgb(255, 255, 255, 0.6);
-    text-align: center;
-    font-size: 14px;
-    line-height: 17px;
-    font-weight: 400;
-    text-decoration: none;
-    margin: 0;
-    padding: 0 0 0 5px;
-  }
-  
-  .authorization__link:hover {
-    color: rgb(255, 255, 255);
-  } */
