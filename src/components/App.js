@@ -16,9 +16,8 @@ import AddPlacePopup from "./AddPlacePopup";
 import PopupDeleteConfirm from "./PopupDeleteConfirm";
 import ImagePopup from "./ImagePopup";
 
-import Login from "./Login";
-import Register from "./Register";
 import InfoTooltip from "./InfoTooltip";
+import Authorization from "./Authorization";
 
 function App() {
   const [isEditAvatarPopupOpen, setIsEditAvatarPopupOpen] = useState(false);
@@ -44,20 +43,24 @@ function App() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    api.getInitialCards()
+    if (loggedIn) {
+      api.getInitialCards()
       .then((cards) => setCards(cards))
       .catch((err) => console.log(err));
-  }, []);
+    }   
+  }, [loggedIn]);
   
   useEffect(() => {
-    api.getUserInfo()
+    if (loggedIn) {
+      api.getUserInfo()
       .then((user) => setCurrentUser(user))
       .catch((err) => console.log(err));
-  }, []);
+    }
+  }, [loggedIn]);
 
   useEffect(() => {
     handleTokenCheck();
-  }, [loggedIn]);
+  }, []);
 
 
   useEffect(() => {
@@ -245,13 +248,19 @@ function App() {
               />
             }/>
             <Route path="/sign-up" element={ 
-              <Register 
+              <Authorization 
                 handleRegister={ handleRegister }
+                authTitle={ "Регистрация" }
+                buttonText={ "Зарегистрироваться" }
+                linkText={ "Уже зарегистрированы? Войти" }
               />
             }/>
             <Route path="/sign-in" element={ 
-              <Login 
+              <Authorization 
                 handleAuthorize={ handleAuthorize }
+                authTitle={ "Вход" }
+                buttonText={ "Войти" }
+                linkText={ "Еще не зарегистрированы? Зарегистрироваться" }
               />
             }/>
             <Route path="*" element={ 
