@@ -185,6 +185,7 @@ function App() {
       .then((data) => {
         if (data.token) {
           localStorage.setItem('token', data.token);
+          setEmail(email);
           setLoggedIn(true);
           navigate('/');
         }
@@ -198,6 +199,8 @@ function App() {
   function handleLogout() {
     localStorage.removeItem('token');
     setLoggedIn(false);
+    setEmail('');
+    setCurrentUser({});
     navigate('/sign-in');
   }
 
